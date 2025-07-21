@@ -1,27 +1,17 @@
 ﻿<script setup lang="ts">
 import NavBarItem from "@/components/navigation/NavBarItem.vue";
+import Logo from "@/components/common/logo.vue";
 </script>
 
 <template>
   <nav class="navbar">
     <router-link to="/" class="navbar-logo" title="Home">
-      <!-- Home SVG icon -->
-      <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
-        <path
-            d="M10 20v-6h4v6m5-16.41L12 3 3 11.59V19a2 2 0 0 0 2 2h3a2 2 0 0 0 2-2v-4h2v4a2 2 0 0 0 2 2h3a2 2 0 0 0 2-2V11.59z"
-            fill="none" stroke="currentColor" stroke-width="2"
-        />
-      </svg>
+      <Logo />
     </router-link>
     <ul class="navbar-links">
       <li>
-        <NavBarItem to="/" label="Home" icon="🏠" />
+        <NavBarItem to="/about" label="About" icon="info" />
       </li>
-      <!--
-      <li>
-        <NavBarItem to="/about" label="About" icon="ℹ️" />
-      </li>
-      -->
     </ul>
   </nav>
 </template>
