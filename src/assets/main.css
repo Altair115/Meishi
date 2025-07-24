@@ -10,27 +10,30 @@
   padding: 2rem;
 }
 
-html {
-  scroll-behavior: smooth;
+/* NieR style anchor and accent coloring */
+a {
+  color: var(--nier-accent-blue);
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+  padding: 0.12em 0.24em;
+  border-radius: 2px;
 }
 
-a,
+a:hover {
+  color: var(--nier-accent-sepia);
+  background: rgba(135, 121, 101, 0.09);
+}
+
+/* Utility semantic color for emphasis if needed */
 .green {
+  color: var(--nier-accent-blue);
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+  transition: color 0.4s;
   padding: 3px;
 }
 
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    /* Remove display: flex if not needed */
-    /* place-items: center; (remove if not centering multiple body children) */
+    background-color: rgba(135, 121, 101, 0.13);
   }
 }
