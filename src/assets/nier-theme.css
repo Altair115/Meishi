@@ -7,6 +7,9 @@
     --nier-separator:        #535145;  /* Decorative lines or accents */
     --nier-navbar-height:    60px;
     --nier-font-family:      'Noto Serif', 'Cormorant Garamond', serif;
+    --nier-icon-box-size:    32px;    /* Default icon box size */
+    --nier-icon-size:        20px;    /* Default icon size */
+    --nier-text-size:        1em;     /* Default nav item label size */
 }
 
 /* === NieR Navbar Theme === */
@@ -70,23 +73,59 @@
 }
 
 .nier-navbar-link:hover,
-.nier-navbar-link:focus {
-    background: var(--nier-navitem-active-bg);
-    color: var(--nier-navitem-active-text);
-}
-
+.nier-navbar-link:focus,
 .nier-navbar-link.router-link-exact-active,
 .nier-navbar-link.active {
     background: var(--nier-navitem-active-bg);
     color: var(--nier-navitem-active-text);
-    box-shadow: 0 5px 0 0 var(--nier-separator); /* Only active item gets underline */
-    z-index: 1;
+}
+
+.nier-navbar-link:hover .icon,
+.nier-navbar-link:focus .icon,
+.nier-navbar-link.router-link-exact-active .icon,
+.nier-navbar-link.active .icon {
+    color: var(--nier-navitem-active-bg);
+}
+
+.nier-navbar-link:hover .icon-box,
+.nier-navbar-link:focus .icon-box,
+.nier-navbar-link.router-link-exact-active .icon-box,
+.nier-navbar-link.active .icon-box {
+    background: var(--nier-navitem-active-text);
+    border-color: var(--nier-navitem-active-text);
+}
+
+.nier-navbar-link:hover .nav-label,
+.nier-navbar-link:focus .nav-label,
+.nier-navbar-link.router-link-exact-active .nav-label,
+.nier-navbar-link.active .nav-label {
+    color: var(--nier-navitem-active-text);
 }
 
 .nier-navbar-link .material-icons {
     margin-right: 0.5em;
     font-size: 1.25em;
     vertical-align: middle;
+}
+
+/* === NavBarItem Icon === */
+.icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--nier-icon-box-size);
+    height: var(--nier-icon-box-size);
+    margin-right: 0.75em;
+    background: #535145;
+}
+
+.icon {
+    font-size: var(--nier-icon-size);
+    color: var(--nier-navitem-active-text);
+}
+
+.nav-label {
+    font-size: var(--nier-text-size);
 }
 
 /* For future separator lines or accents */

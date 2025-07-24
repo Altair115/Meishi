@@ -1,49 +1,51 @@
 ﻿<script setup lang="ts">
 import { useRouter, useRoute } from "vue-router";
-import { nextTick } from "vue";
+import { nextTick, computed } from "vue";
 
 const props = defineProps<{
-  to: string
-  label: string
-  icon?: string // Use the Material icon name, SVG or Emote (e.g., "home")
+  to: string;
+  label: string;
+  icon?: string; // Material icon name or symbol
 }>();
 
 const router = useRouter();
 const route = useRoute();
 
+const isAnchor = computed(() => props.to.startsWith("#"));
+
 function handleClick(event: Event) {
-  if (props.to.startsWith("#")) {
+  if (isAnchor.value) {
     event.preventDefault();
     const sectionId = props.to.slice(1);
     if (route.path !== "/") {
       router.push("/").then(() => {
-        nextTick(() => {
-          scrollToSection(sectionId);
-        });
+        nextTick(() => scrollToSection(sectionId));
       });
     } else {
       scrollToSection(sectionId);
     }
   }
-  // else - let router-link handle normal navigation
 }
 
 function scrollToSection(id: string) {
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: "smooth" });
 }
-
 </script>
 
 <template>
   <router-link
-      :to="props.to.startsWith('#') ? '/' : props.to"
+      :to="isAnchor ? '/' : to"
       class="nier-navbar-link"
       :title="label"
       @click="handleClick"
   >
-    <span v-if="icon" class="material-icons icon">{{ icon }}</span>
-    <slot>{{ label }}</slot>
+    <div class="icon-box" v-if="icon">
+      <span class="material-icons icon">{{ icon }}</span>
+    </div>
+    <span class="nav-label">
+      <slot>{{ label }}</slot>
+    </span>
   </router-link>
 </template>
 
