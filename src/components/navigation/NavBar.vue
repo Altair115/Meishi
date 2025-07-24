@@ -46,7 +46,7 @@ function handleLogoClick(event: MouseEvent) {
       <Logo />
     </a>
     <ul class="nier-navbar-links">
-    <li>
+      <li>
         <NavBarItem to="#about" label="About" icon="info" />
       </li>
       <li>

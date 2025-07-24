@@ -41,10 +41,8 @@ function scrollToSection(id: string) {
       class="nier-navbar-link"
       :title="label"
       @click="handleClick"
-      active-class="nier-navbar-link-active"
-      exact-active-class="nier-navbar-link-active"
   >
-    <span v-if="icon" class="material-icons nier-navbar-icon">{{ icon }}</span>
+    <span v-if="icon" class="material-icons icon">{{ icon }}</span>
     <slot>{{ label }}</slot>
   </router-link>
 </template>
