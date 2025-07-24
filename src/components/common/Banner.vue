@@ -1,19 +1,29 @@
 ﻿<script setup lang="ts">
+import { onMounted, defineEmits, ref } from 'vue'
+const emits = defineEmits(['height'])
+const bannerRef = ref<HTMLElement | null>(null)
 
+onMounted(() => {
+  if (bannerRef.value) {
+    emits('height', bannerRef.value.offsetHeight)
+  }
+})
+
+//TODO: Add props for background image, title, etc.
 </script>
 
 <template>
   <div class="hero-banner">
-    <slot>
-      <!-- Default content if no slot is provided -->
-      <h1>Welcome!</h1>
-    </slot>
+    <slot  />
   </div>
 </template>
 
 <style scoped>
 .hero-banner {
-  height: 400px;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,5 +32,6 @@
   color: #fff;
   font-size: 2rem;
   text-align: center;
+  box-sizing: border-box;
 }
 </style>

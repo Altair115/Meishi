@@ -4,7 +4,6 @@ defineProps<{
   label: string
   icon?: string // Use the Material icon name, SVG or Emote (e.g., "home")
 }>()
-
 </script>
 
 <template>

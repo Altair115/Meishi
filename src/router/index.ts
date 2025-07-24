@@ -1,5 +1,6 @@
 ﻿import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import BlogView from "@/views/BlogView.vue";
 // Import more views here to add them
 
 
@@ -9,11 +10,11 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Home',
         component: HomeView,
     },
-    // {
-    //   path: '/about',
-    //   name: 'About',
-    //   component: () => import('../views/AboutView.vue'),
-    // },
+    {
+        path: '/blog',
+        name: 'Blog',
+        component: BlogView,
+    },
 ]
 
 const router = createRouter({
