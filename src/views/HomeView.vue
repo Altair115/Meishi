@@ -1,5 +1,8 @@
 ﻿<script setup lang="ts">
 import Banner from "@/components/common/Banner.vue";
+import AboutView from "@/views/AboutView.vue";
+import ProjectsView from "@/views/ProjectsView.vue";
+import ContactView from "@/views/ContactView.vue";
 </script>
 
 <template>
@@ -8,16 +11,13 @@ import Banner from "@/components/common/Banner.vue";
     <p>This is your homepage. Edit it as you like!</p>
   </section>
   <section id="about">
-    <h2>About</h2>
-    <p>This is the about section.</p>
+    <AboutView />
   </section>
   <section id="projects">
-    <h2>Projects</h2>
-    <p>This is the projects section.</p>
+    <ProjectsView/>
   </section>
   <section id="contact">
-    <h2>Contact</h2>
-    <p>This is the contact section.</p>
+    <ContactView/>
   </section>
 </template>
 
