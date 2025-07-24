@@ -47,13 +47,13 @@ function handleLogoClick(event: MouseEvent) {
     </a>
     <ul class="navbar-links">
       <li>
-        <a href="#about" @click.prevent="scrollToSection('about')">About</a>
+        <NavBarItem to="#about" label="About" icon="info" />
       </li>
       <li>
-        <a href="#projects" @click.prevent="scrollToSection('projects')">Projects</a>
+        <NavBarItem to="#projects" label="Projects" icon="code" />
       </li>
       <li>
-        <a href="#contact" @click.prevent="scrollToSection('contact')">Contact</a>
+        <NavBarItem to="#contact" label="Contact" icon="mail" />
       </li>
       <li>
         <NavBarItem to="/blog" label="Blog" icon="rss_feed" />
