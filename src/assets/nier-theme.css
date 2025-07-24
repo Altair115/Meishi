@@ -1,0 +1,123 @@
+﻿:root {
+    --nier-bg-dark: #23221f;
+    --nier-panel-dark: #292826;
+    --nier-border-gray: #aaaaa7;
+    --nier-accent-sepia: #b79b62;
+    --nier-text-light: #ffffffee;
+    --nier-font-title: 'Noto Serif', 'Roboto', serif;
+}
+
+/* Panel styles */
+.nier-panel {
+    background: var(--nier-panel-dark);
+    border: 2px solid var(--nier-border-gray);
+    box-shadow:
+            0 1.2px 0 0 var(--nier-accent-sepia),
+            0 6px 16px -9px rgba(0,0,0,0.15) inset;
+    border-radius: 7px;
+    padding: 1rem 2rem;
+    color: var(--nier-text-light);
+}
+
+/* Navbar styles */
+.nier-navbar {
+    width: 100vw;
+    left: 0;
+    display: flex;
+    align-items: center;
+    background: var(--nier-panel-dark);
+    height: 54px;
+    border-bottom: 2px solid var(--nier-border-gray);
+    font-family: var(--nier-font-title);
+    box-shadow:
+            0 1.2px 0 0 var(--nier-accent-sepia),
+            0 6px 16px -9px rgba(0,0,0,0.14) inset;
+}
+.nier-navbar-logo {
+    color: var(--nier-text-light);
+    margin-right: 2.3rem;
+    text-decoration: none;
+    opacity: 0.96;
+    transition: opacity .18s;
+}
+.nier-navbar-links {
+    display: flex;
+    list-style: none;
+    gap: 0.7rem;
+    padding: 0;
+    margin: 0;
+}
+
+/* Button / Nav item */
+.nier-navbar-link {
+    display: flex;
+    align-items: center;
+    color: var(--nier-text-light);
+    font-family: var(--nier-font-title);
+    font-weight: 600;
+    background: rgba(40,37,29, 0.48);
+    border: 1.2px solid var(--nier-border-gray);
+    border-radius: 5px 8px 5px 8px;
+    box-shadow:
+            0 1.5px 0 0 var(--nier-accent-sepia),
+            0 0 0 1.5px var(--nier-panel-dark) inset;
+    font-size: 1.07em;
+    letter-spacing: .05em;
+    position: relative;
+    padding: 0.18em 1.18em;
+    transition: color .18s, border-color .16s, background .25s, box-shadow .14s;
+}
+.nier-navbar-link:hover,
+.nier-navbar-link:focus {
+    color: var(--nier-accent-sepia);
+    background: rgba(135,121,101, 0.13);
+    border-color: var(--nier-accent-sepia);
+    box-shadow:
+            0 3px 10px 0 rgba(135,121,101,0.08),
+            0 1.5px 0 0 var(--nier-accent-sepia),
+            0 0 0 1.5px var(--nier-bg-dark) inset;
+}
+.nier-navbar-link-active {
+    background: rgba(135,121,101, 0.21);
+    border-color: var(--nier-accent-sepia);
+    color: var(--nier-accent-sepia);
+}
+
+/* Icon in nav */
+.nier-navbar-icon {
+    margin-right: 0.14em;
+    font-size: 1.19em;
+    color: var(--nier-accent-sepia);
+}
+
+/* Optional: Nier holographic-corner accent */
+.nier-ui-corner {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: .68em; height: .68em;
+    border-bottom: 2px solid var(--nier-accent-sepia);
+    border-right: 2px solid var(--nier-accent-sepia);
+    opacity: 0.22;
+    pointer-events: none;
+}
+.nier-navbar-link:hover .nier-ui-corner,
+.nier-navbar-link:focus .nier-ui-corner,
+.nier-navbar-link-active .nier-ui-corner {
+    opacity: 0.72;
+}
+
+/* Main content wrapper – applies to your router-view container */
+.nier-main-content {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 2.2rem 1.3rem 4rem 1.3rem;
+    min-height: 80vh;
+    background: none;
+}
+
+body {
+    background: var(--nier-bg-dark);
+    color: var(--nier-text-light);
+    font-family: var(--nier-font-title);
+}

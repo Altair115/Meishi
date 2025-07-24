@@ -34,13 +34,14 @@ onBeforeUnmount(() => {
     <h1>K.E. Celinski</h1>
     <p>Software engineer, Programmer, Game designer</p>
   </Banner>
-  <NavBar :sticky="isSticky" @height="updateNavBarHeight"/>
-  <div v-if="isSticky" :style="{height: navbarHeight + 'px'}"></div>
-  <div class="main-content">
+  <NavBar :sticky="isSticky" @height="updateNavBarHeight" />
+
+  <!-- Spacer for sticky navbar -->
+  <div v-if="isSticky" :style="{ height: navbarHeight + 'px' }"></div>
+
+  <main class="nier-main-content">
     <router-view />
-    <!-- This dummy block makes page long for scrolling! -->
-    <div style="height: 2000px; background: repeating-linear-gradient(#eee, #ddd 100px);"></div>
-  </div>
+  </main>
 </template>
 
 <style scoped>
