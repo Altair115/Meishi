@@ -1,0 +1,97 @@
+﻿:root {
+    --nier-navbar-bg:        #cfc9b1;  /* Main navbar sepia */
+    --nier-navitem-bg:       #a39e8a;  /* Nav item (darker sepia) */
+    --nier-navitem-text:     #535145;  /* Default item text, very dark */
+    --nier-navitem-active-bg:#535145;  /* Selected item, pale sepia */
+    --nier-navitem-active-text:#cfc9b1;/* Selected tab text, rich/dark */
+    --nier-separator:        #535145;  /* Decorative lines or accents */
+    --nier-navbar-height:    56px;
+    --nier-font-family:      'Noto Serif', 'Cormorant Garamond', serif;
+}
+
+/* === NieR Navbar Theme === */
+
+.nier-navbar {
+    width: 100vw;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    background: var(--nier-navbar-bg);
+    padding: 0 2rem;
+    height: var(--nier-navbar-height);
+    transition: background 0.3s, box-shadow 0.3s;
+    box-shadow: none;
+    position: static;
+    border-bottom: 2px solid var(--nier-separator);
+    font-family: var(--nier-font-family);
+}
+
+.nier-navbar-sticky {
+    position: fixed;
+    top: 0;
+    background: var(--nier-navbar-bg) !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+}
+
+.nier-navbar-logo {
+    display: flex;
+    align-items: center;
+    color: var(--nier-navitem-text);
+    margin-right: 2rem;
+    transition: opacity .2s;
+    text-decoration: none;
+}
+
+.nier-navbar-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    align-items: flex-end;
+}
+
+/* === NavBarItem === */
+.nier-navbar-link {
+    display: flex;
+    align-items: center;
+    background: var(--nier-navitem-bg);
+    color: var(--nier-navitem-text);
+    margin-right: 1.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background .2s, color .2s, margin-bottom .2s, box-shadow .2s;
+    border-radius: 0;                   /* No rounded corners */
+    height: 90%;                        /* Bigger height, close to navbar height */
+    padding: 0.6em 1.5em;               /* More vertical & horizontal padding */
+    font-family: var(--nier-font-family);
+    font-size: 1.18em;                  /* Slightly bigger font */
+    margin-bottom: 8px;                 /* Lift inactive buttons off the bottom border */
+    box-shadow: none;
+}
+
+.nier-navbar-link:hover,
+.nier-navbar-link:focus {
+    background: var(--nier-navitem-active-bg);
+    color: var(--nier-navitem-active-text);
+}
+.nier-navbar-link.router-link-exact-active,
+.nier-navbar-link.active {
+    background: var(--nier-navitem-active-bg);
+    color: var(--nier-navitem-active-text);
+    margin-bottom: 0;
+    box-shadow: 0 2px 0 0 var(--nier-separator);
+    z-index: 1;
+}
+
+.nier-navbar-link .material-icons {
+    margin-right: 0.5em;
+    font-size: 1.25em;
+    vertical-align: middle;
+}
+
+/* For future separator lines or accents */
+.nier-separator {
+    border-color: var(--nier-separator);
+}

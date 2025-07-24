@@ -41,12 +41,12 @@ function handleLogoClick(event: MouseEvent) {
 </script>
 
 <template>
-  <nav :class="['navbar', { 'navbar-sticky': props.sticky }]">
-    <a href="/home" class="navbar-logo" title="Home" @click="handleLogoClick">
+  <nav :class="['nier-navbar', { 'nier-navbar-sticky': props.sticky }]">
+    <a href="/home" class="nier-navbar-logo" title="Home" @click="handleLogoClick">
       <Logo />
     </a>
-    <ul class="navbar-links">
-      <li>
+    <ul class="nier-navbar-links">
+    <li>
         <NavBarItem to="#about" label="About" icon="info" />
       </li>
       <li>
@@ -63,39 +63,5 @@ function handleLogoClick(event: MouseEvent) {
 </template>
 
 <style scoped>
-.navbar {
-  width: 100vw;
-  left: 0;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  background: transparent;
-  padding: 0 2rem;
-  height: 56px;
-  transition: background 0.3s, box-shadow 0.3s;
-  box-shadow: none;
-  /* Only sticky will be fixed! */
-  position: static;
-  top: auto;
-}
-.navbar-sticky {
-  position: fixed;
-  top: 0;
-  background: #222 !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.09);
-}
-.navbar-logo {
-  display: flex;
-  align-items: center;
-  color: #fff;
-  margin-right: 2rem;
-  transition: opacity .2s;
-  text-decoration: none;
-}
-.navbar-links {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+
 </style>
