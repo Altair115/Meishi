@@ -5,7 +5,7 @@
     --nier-navitem-active-bg:#535145;  /* Selected item, pale sepia */
     --nier-navitem-active-text:#cfc9b1;/* Selected tab text, rich/dark */
     --nier-separator:        #535145;  /* Decorative lines or accents */
-    --nier-navbar-height:    56px;
+    --nier-navbar-height:    60px;
     --nier-font-family:      'Noto Serif', 'Cormorant Garamond', serif;
 }
 
@@ -49,7 +49,7 @@
     padding: 0;
     margin: 0;
     height: 100%;
-    align-items: flex-end;
+    align-items: center; /* Everything perfectly centered */
 }
 
 /* === NavBarItem === */
@@ -61,14 +61,12 @@
     margin-right: 1.5rem;
     font-weight: 500;
     text-decoration: none;
-    transition: background .2s, color .2s, margin-bottom .2s, box-shadow .2s;
-    border-radius: 0;                   /* No rounded corners */
-    height: 90%;                        /* Bigger height, close to navbar height */
-    padding: 0.6em 1.5em;               /* More vertical & horizontal padding */
+    transition: background .2s, color .2s, box-shadow .2s;
+    border-radius: 0;
+    padding: 0.7em 1.5em;
     font-family: var(--nier-font-family);
-    font-size: 1.18em;                  /* Slightly bigger font */
-    margin-bottom: 8px;                 /* Lift inactive buttons off the bottom border */
-    box-shadow: none;
+    font-size: 1.18em;
+    box-shadow: none;       /* Default: no underline */
 }
 
 .nier-navbar-link:hover,
@@ -76,12 +74,12 @@
     background: var(--nier-navitem-active-bg);
     color: var(--nier-navitem-active-text);
 }
+
 .nier-navbar-link.router-link-exact-active,
 .nier-navbar-link.active {
     background: var(--nier-navitem-active-bg);
     color: var(--nier-navitem-active-text);
-    margin-bottom: 0;
-    box-shadow: 0 2px 0 0 var(--nier-separator);
+    box-shadow: 0 5px 0 0 var(--nier-separator); /* Only active item gets underline */
     z-index: 1;
 }
 
