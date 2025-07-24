@@ -5,11 +5,11 @@
     --nier-navitem-active-bg:#535145;  /* Selected item, pale sepia */
     --nier-navitem-active-text:#cfc9b1;/* Selected tab text, rich/dark */
     --nier-separator:        #535145;  /* Decorative lines or accents */
-    --nier-navbar-height:    60px;
+    --nier-navbar-height:    75px;
     --nier-font-family:      'Noto Serif', 'Cormorant Garamond', serif;
-    --nier-icon-box-size:    32px;    /* Default icon box size */
-    --nier-icon-size:        20px;    /* Default icon size */
-    --nier-text-size:        1em;     /* Default nav item label size */
+    --nier-icon-box-size:    35px;    /* Default icon box size */
+    --nier-icon-size:        30px;    /* Default icon size */
+    --nier-text-size:        1.6em;     /* Default nav item label size */
 }
 
 /* === NieR Navbar Theme === */
@@ -26,7 +26,7 @@
     transition: background 0.3s, box-shadow 0.3s;
     box-shadow: none;
     position: static;
-    border-bottom: 2px solid var(--nier-separator);
+    border-bottom: 3px solid var(--nier-separator);
     font-family: var(--nier-font-family);
 }
 
@@ -66,7 +66,7 @@
     text-decoration: none;
     transition: background .2s, color .2s, box-shadow .2s;
     border-radius: 0;
-    padding: 0.7em 1.5em;
+    padding: .5em;
     font-family: var(--nier-font-family);
     font-size: 1.18em;
     box-shadow: none;       /* Default: no underline */
@@ -78,6 +78,11 @@
 .nier-navbar-link.active {
     background: var(--nier-navitem-active-bg);
     color: var(--nier-navitem-active-text);
+}
+
+.nier-navbar-link.router-link-exact-active,
+.nier-navbar-link.active {
+    box-shadow: 0 12px 0 0 var(--nier-separator);
 }
 
 .nier-navbar-link:hover .icon,
@@ -103,8 +108,6 @@
 }
 
 .nier-navbar-link .material-icons {
-    margin-right: 0.5em;
-    font-size: 1.25em;
     vertical-align: middle;
 }
 
