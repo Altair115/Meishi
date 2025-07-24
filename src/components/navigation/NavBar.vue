@@ -21,10 +21,8 @@ const props = defineProps({ sticky: Boolean });
 
 <style scoped>
 .navbar {
-  width: 100vw; /* Full viewport width */
-  position: fixed; /* Sticks to top */
+  width: 100vw;
   left: 0;
-  top: 0;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -33,8 +31,13 @@ const props = defineProps({ sticky: Boolean });
   height: 56px;
   transition: background 0.3s, box-shadow 0.3s;
   box-shadow: none;
+  /* Only sticky will be fixed! */
+  position: static;
+  top: auto;
 }
 .navbar-sticky {
+  position: fixed;
+  top: 0;
   background: #222 !important;
   box-shadow: 0 2px 8px rgba(0,0,0,0.09);
 }
