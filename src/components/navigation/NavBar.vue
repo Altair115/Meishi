@@ -1,17 +1,60 @@
 ﻿<script setup lang="ts">
-import { defineProps } from "vue";
+import { defineProps, nextTick } from "vue";
+import { useRouter, useRoute } from "vue-router";
 import NavBarItem from "@/components/navigation/NavBarItem.vue";
 import Logo from "@/components/common/logo.vue";
 
 const props = defineProps({ sticky: Boolean });
+const router = useRouter();
+const route = useRoute();
+
+function scrollToSection(id: string) {
+  // Helper to actually perform the scroll when element is available
+  function doScroll() {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  }
+
+  if (route.path !== "/") {
+    // Go to homepage first, then scroll (after DOM updates)
+    router.push("/").then(() => {
+      // Wait a tick to ensure the content is rendered
+      nextTick(() => {
+        doScroll();
+      });
+    });
+  } else {
+    doScroll();
+  }
+}
+
+function handleLogoClick(event: MouseEvent) {
+  event.preventDefault();
+  if (route.path === "/") {
+    // If already on the home page, scroll to top
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } else {
+    // Navigate to home page
+    router.push("/");
+  }
+}
 </script>
 
 <template>
   <nav :class="['navbar', { 'navbar-sticky': props.sticky }]">
-    <router-link to="/" class="navbar-logo" title="Home">
+    <a href="/home" class="navbar-logo" title="Home" @click="handleLogoClick">
       <Logo />
-    </router-link>
+    </a>
     <ul class="navbar-links">
+      <li>
+        <a href="#about" @click.prevent="scrollToSection('about')">About</a>
+      </li>
+      <li>
+        <a href="#projects" @click.prevent="scrollToSection('projects')">Projects</a>
+      </li>
+      <li>
+        <a href="#contact" @click.prevent="scrollToSection('contact')">Contact</a>
+      </li>
       <li>
         <NavBarItem to="/blog" label="Blog" icon="rss_feed" />
       </li>

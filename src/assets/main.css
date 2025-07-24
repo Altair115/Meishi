@@ -10,6 +10,10 @@
   padding: 2rem;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a,
 .green {
   text-decoration: none;

@@ -37,11 +37,9 @@ onBeforeUnmount(() => {
   <NavBar :sticky="isSticky" @height="updateNavBarHeight"/>
   <div v-if="isSticky" :style="{height: navbarHeight + 'px'}"></div>
   <div class="main-content">
-    <section id="home"><HomeView /></section>
-
+    <router-view />
     <!-- This dummy block makes page long for scrolling! -->
-    <div style="height: 2000px; background: repeating-linear-gradient(#eee, #ddd 100px);">
-    </div>
+    <div style="height: 2000px; background: repeating-linear-gradient(#eee, #ddd 100px);"></div>
   </div>
 </template>
 
