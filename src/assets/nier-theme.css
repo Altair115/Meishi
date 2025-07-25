@@ -16,7 +16,7 @@
 
 /* === NieR Navbar Theme === */
 .nier-navbar {
-    width: 100vw;
+    width: 100%;
     left: 0;
     z-index: 1000;
     display: flex;
@@ -33,6 +33,8 @@
 
 .nier-navbar-sticky {
     position: fixed;
+    width: 100%;
+    left: 0;
     top: 0;
     background: var(--nier-navbar-bg) !important;
     box-shadow: 0 2px 8px rgba(0,0,0,0.09);
