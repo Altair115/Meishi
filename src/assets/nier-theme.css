@@ -5,7 +5,7 @@
     --nier-navitem-active-bg:#535145;  /* Selected item, pale sepia */
     --nier-navitem-active-text:#cfc9b1;/* Selected tab text, rich/dark */
     --nier-separator:        #535145;  /* Decorative lines or accents */
-    --nier-navbar-height:    75px;
+    --nier-navbar-height:    95px;
     --nier-font-family:      'Noto Serif', 'Cormorant Garamond', serif;
     --nier-icon-box-size:    35px;    /* Default icon box size */
     --nier-icon-size:        30px;    /* Default icon size */
@@ -13,7 +13,6 @@
 }
 
 /* === NieR Navbar Theme === */
-
 .nier-navbar {
     width: 100vw;
     left: 0;
@@ -52,6 +51,7 @@
     padding: 0;
     margin: 0;
     height: 100%;
+    transform: translateY(5px);
     align-items: center; /* Everything perfectly centered */
 }
 
@@ -82,7 +82,7 @@
 
 .nier-navbar-link.router-link-exact-active,
 .nier-navbar-link.active {
-    box-shadow: 0 12px 0 0 var(--nier-separator);
+    box-shadow: 0 16px 0 0 var(--nier-separator);
 }
 
 .nier-navbar-link:hover .icon,
@@ -134,4 +134,48 @@
 /* For future separator lines or accents */
 .nier-separator {
     border-color: var(--nier-separator);
+}
+
+/* Test area */
+.nier-navbar-link {
+    position: relative; /* Needed for absolute positioning of lines */
+    overflow: visible;
+}
+
+/* Use pseudo-elements for the top and bottom lines */
+.nier-navbar-link::before,
+.nier-navbar-link::after {
+    content: "";
+    position: absolute;
+    left: 0%;   /* Prevent full-width lines, adjust as needed */
+    right: 0%;
+    height: 3px;
+    background: var(--nier-separator);
+    opacity: 0;
+    transition: opacity 0.2s, background 0.2s;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.nier-navbar-link::before {
+    top: -6px; /* Offset 2px from the top */
+}
+.nier-navbar-link::after {
+    bottom: -6px; /* Offset 2px from the bottom */
+}
+
+/* Show lines on hover/focus ONLY if not active */
+.nier-navbar-link:not(.active):hover::before,
+.nier-navbar-link:not(.active):hover::after,
+.nier-navbar-link:not(.active):focus::before,
+.nier-navbar-link:not(.active):focus::after {
+    opacity: 1;
+}
+
+/* Prevent lines on active state */
+.nier-navbar-link.active::before,
+.nier-navbar-link.active::after,
+.nier-navbar-link.router-link-exact-active::before,
+.nier-navbar-link.router-link-exact-active::after {
+    opacity: 0 !important;
 }
