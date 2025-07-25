@@ -1,11 +1,12 @@
 html, body {
   margin: 0;
   padding: 0;
-  width: 100vw; /* Ensures 100% of viewport width */
+  width: 100%; /* Ensures 100% of viewport width */
   scroll-behavior: smooth;
   box-sizing: border-box;
 }
 #app {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
 }
+/*Test zone*/

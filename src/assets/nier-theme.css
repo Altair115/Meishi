@@ -29,6 +29,7 @@
     position: static;
     border-bottom: 3px solid var(--nier-separator);
     font-family: var(--nier-font-family);
+    box-sizing: border-box;
 }
 
 .nier-navbar-sticky {

@@ -2,6 +2,7 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import NavBar from "@/components/navigation/NavBar.vue";
 import Banner from "@/components/common/Banner.vue";
+import NierAccentBar from "@/components/common/NierAccentBar.vue";
 
 const isSticky = ref(false);
 const bannerHeight = ref(600);
