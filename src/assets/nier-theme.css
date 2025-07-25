@@ -1,4 +1,6 @@
-﻿:root {
+﻿@import './base.css';
+
+:root {
     --nier-navbar-bg:        #cfc9b1;  /* Main navbar sepia */
     --nier-navitem-bg:       #a39e8a;  /* Nav item (darker sepia) */
     --nier-navitem-text:     #535145;  /* Default item text, very dark */
@@ -177,3 +179,10 @@
 }
 
 /* Test area */
+.main-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+

@@ -1,53 +1,11 @@
-:root {
-  /* NieR: Automata inspired palette */
-  --nier-bg-dark: #111111;
-  --nier-panel-dark: #222426;
-  --nier-text-light: #F5F5F2;
-  --nier-border-gray: #D8D8D8;
-  --nier-accent-sepia: #877965;
-  --nier-accent-blue: #6E93B5;
-  --section-gap: 160px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --nier-bg-dark: #111111;
-    --nier-panel-dark: #222426;
-    --nier-text-light: #F5F5F2;
-    --nier-border-gray: #A9A9A9;
-    --nier-accent-sepia: #b6a590;
-    --nier-accent-blue: #80a0c0;
-  }
-}
-
-/* Reset & base styles */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+html, body {
   margin: 0;
-  font-weight: normal;
-}
-
-body {
-  min-height: 100vh;
-  color: var(--nier-text-light);
-  background: var(--nier-bg-dark);
-  font-family:
-          'Noto Serif',
-          'Roboto',
-          -apple-system,
-          BlinkMacSystemFont,
-          'Segoe UI',
-          sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
-  transition: color 0.3s, background 0.3s;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-html {
+  padding: 0;
+  width: 100vw; /* Ensures 100% of viewport width */
   scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+#app {
+  width: 100vw;
+  min-height: 100vh;
 }
