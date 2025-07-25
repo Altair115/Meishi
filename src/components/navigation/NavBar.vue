@@ -47,13 +47,13 @@ function handleLogoClick(event: MouseEvent) {
     </a>
     <ul class="nier-navbar-links">
       <li>
-        <NavBarItem to="#about" label="About" icon="info" />
+        <NavBarItem to="/about" label="About" icon="info" />
       </li>
       <li>
-        <NavBarItem to="#projects" label="Projects" icon="code" />
+        <NavBarItem to="/projects" label="Projects" icon="code" />
       </li>
       <li>
-        <NavBarItem to="#contact" label="Contact" icon="mail" />
+        <NavBarItem to="/contact" label="Contact" icon="mail" />
       </li>
       <li>
         <NavBarItem to="/blog" label="Blog" icon="rss_feed" />

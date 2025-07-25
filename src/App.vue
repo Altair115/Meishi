@@ -38,7 +38,7 @@ onBeforeUnmount(() => {
   <!-- Spacer for sticky navbar -->
   <div v-if="isSticky" :style="{ height: navbarHeight + 'px' }"></div>
 
-  <main class="nier-main-content">
+  <main class="main-content">
     <router-view />
   </main>
 </template>

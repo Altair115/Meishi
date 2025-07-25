@@ -62,6 +62,7 @@
     position: relative; /* Needed for absolute positioning of lines */
     overflow: visible;
     display: flex;
+    width: 165px;
     align-items: center;
     background: var(--nier-navitem-bg);
     color: var(--nier-navitem-text);
