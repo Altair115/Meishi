@@ -8,7 +8,7 @@
     --nier-navitem-active-text:#cfc9b1;/* Selected tab text, rich/dark */
     --nier-separator:        #535145;  /* Decorative lines or accents */
     --nier-navbar-height:    95px;
-    --nier-font-family:      'Noto Serif', 'Cormorant Garamond', serif;
+    --nier-font-family:      'M PLUS 1p','Noto Serif', serif;
     --nier-icon-box-size:    35px;    /* Default icon box size */
     --nier-icon-size:        30px;    /* Default icon size */
     --nier-text-size:        1.6em;     /* Default nav item label size */
@@ -69,7 +69,7 @@
     background: var(--nier-navitem-bg);
     color: var(--nier-navitem-text);
     margin-right: 1.5rem;
-    font-weight: 500;
+    font-weight: 400;
     text-decoration: none;
     transition: background .2s, color .2s, box-shadow .2s;
     border-radius: 0;
