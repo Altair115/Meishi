@@ -57,6 +57,8 @@
 
 /* === NavBarItem === */
 .nier-navbar-link {
+    position: relative; /* Needed for absolute positioning of lines */
+    overflow: visible;
     display: flex;
     align-items: center;
     background: var(--nier-navitem-bg);
@@ -70,6 +72,44 @@
     font-family: var(--nier-font-family);
     font-size: 1.18em;
     box-shadow: none;       /* Default: no underline */
+}
+
+/* Use pseudo-elements for the top and bottom lines */
+.nier-navbar-link::before,
+.nier-navbar-link::after {
+    content: "";
+    position: absolute;
+    left: 0%;   /* Prevent full-width lines, adjust as needed */
+    right: 0%;
+    height: 3px;
+    background: var(--nier-separator);
+    opacity: 0;
+    transition: opacity 0.2s, background 0.2s;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.nier-navbar-link::before {
+    top: -6px; /* Offset 2px from the top */
+}
+.nier-navbar-link::after {
+    bottom: -6px; /* Offset 2px from the bottom */
+}
+
+/* Show lines on hover/focus ONLY if not active */
+.nier-navbar-link:not(.active):hover::before,
+.nier-navbar-link:not(.active):hover::after,
+.nier-navbar-link:not(.active):focus::before,
+.nier-navbar-link:not(.active):focus::after {
+    opacity: 1;
+}
+
+/* Prevent lines on active state */
+.nier-navbar-link.active::before,
+.nier-navbar-link.active::after,
+.nier-navbar-link.router-link-exact-active::before,
+.nier-navbar-link.router-link-exact-active::after {
+    opacity: 0 !important;
 }
 
 .nier-navbar-link:hover,
@@ -137,45 +177,3 @@
 }
 
 /* Test area */
-.nier-navbar-link {
-    position: relative; /* Needed for absolute positioning of lines */
-    overflow: visible;
-}
-
-/* Use pseudo-elements for the top and bottom lines */
-.nier-navbar-link::before,
-.nier-navbar-link::after {
-    content: "";
-    position: absolute;
-    left: 0%;   /* Prevent full-width lines, adjust as needed */
-    right: 0%;
-    height: 3px;
-    background: var(--nier-separator);
-    opacity: 0;
-    transition: opacity 0.2s, background 0.2s;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.nier-navbar-link::before {
-    top: -6px; /* Offset 2px from the top */
-}
-.nier-navbar-link::after {
-    bottom: -6px; /* Offset 2px from the bottom */
-}
-
-/* Show lines on hover/focus ONLY if not active */
-.nier-navbar-link:not(.active):hover::before,
-.nier-navbar-link:not(.active):hover::after,
-.nier-navbar-link:not(.active):focus::before,
-.nier-navbar-link:not(.active):focus::after {
-    opacity: 1;
-}
-
-/* Prevent lines on active state */
-.nier-navbar-link.active::before,
-.nier-navbar-link.active::after,
-.nier-navbar-link.router-link-exact-active::before,
-.nier-navbar-link.router-link-exact-active::after {
-    opacity: 0 !important;
-}
