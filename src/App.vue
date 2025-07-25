@@ -6,7 +6,7 @@ import HomeView from "@/views/HomeView.vue";
 
 const isSticky = ref(false);
 const bannerHeight = ref(600);
-const navbarHeight = ref(56); // If needed for offset
+const navbarHeight = ref(95); // If needed for offset
 
 function updateBannerHeight(height) {
   bannerHeight.value = height;
