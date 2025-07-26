@@ -4,9 +4,18 @@ html, body {
   width: 100%; /* Ensures 100% of viewport width */
   scroll-behavior: smooth;
   box-sizing: border-box;
+  overflow-y: auto; /* Ensure scrolling happens here */
 }
 #app {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
+  overflow: visible;
+}
+
+.main-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  overflow: visible;
 }
 /*Test zone*/
