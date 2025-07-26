@@ -1,17 +1,39 @@
 ﻿<script setup lang="ts">
-defineProps({
-  count: { type: Number, default: 24 }, // Number of blocks across
+import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
+
+const container = ref<HTMLElement | null>(null);
+const containerWidth = ref(0);
+
+// Match this to your actual unit width (segment + dots cluster)
+const UNIT_WIDTH = 62;
+
+const computedCount = computed(() =>
+    Math.floor(containerWidth.value / UNIT_WIDTH)
+);
+
+let resizeObserver: ResizeObserver;
+
+onMounted(() => {
+  if (container.value) {
+    resizeObserver = new ResizeObserver(([entry]) => {
+      containerWidth.value = entry.contentRect.width;
+    });
+    resizeObserver.observe(container.value);
+  }
+});
+
+onBeforeUnmount(() => {
+  if (resizeObserver) resizeObserver.disconnect();
 });
 </script>
 
 <template>
-  <div class="nier-accent-bar">
+  <div class="nier-accent-bar" ref="container">
     <div class="pattern-row">
-      <template v-for="i in count" :key="i">
+      <template v-for="i in computedCount" :key="i">
         <div class="segment"></div>
-        <!-- Render dots only between segments, not after the last one -->
         <div
-            v-if="i < count"
+            v-if="i < computedCount"
             class="dots-triangle"
         >
           <div class="dots-row">

@@ -60,7 +60,7 @@ function handleLogoClick(event: MouseEvent) {
         <NavBarItem to="/blog" label="Blog" icon="rss_feed" />
       </li>
     </ul>
-    <NierAccentBar :count="26" />
+    <NierAccentBar/>
   </nav>
 </template>
 
