@@ -3,6 +3,7 @@ import { ref, onMounted, onBeforeUnmount } from 'vue';
 import NavBar from "@/components/navigation/NavBar.vue";
 import Banner from "@/components/common/Banner.vue";
 import NierAccentBar from "@/components/common/NierAccentBar.vue";
+import Footer from "@/components/common/Footer.vue";
 
 const isSticky = ref(false);
 const bannerHeight = ref(600);
@@ -41,6 +42,7 @@ onBeforeUnmount(() => {
 
   <main class="main-content">
     <router-view />
+    <Footer />
   </main>
 </template>
 
