@@ -28,37 +28,25 @@ defineProps({
 </template>
 
 <style scoped>
-.nier-accent-bar {
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 100%;
-  display: flex;
-  justify-content: center;
-  pointer-events: none;
-  background: transparent;
-  z-index: 5;
-}
-
 .pattern-row {
   display: flex;
   align-items: flex-start;
 }
 
 .segment {
-  width: 16px;
-  height: 5px;
+  width: 12px;
+  height: 6px;
   background: var(--nier-separator, #aaa);
-  margin-bottom: 3px;
-  margin-right: 0.5em;
-  margin-left: 0.5em;
+  margin-bottom: 5px;
+  margin-right: 0.8em;
+  margin-left: 0.8em;
 }
 
 .dots-triangle {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 1px;
+  margin-top: 2px;
   margin-bottom: 0.5em;
   min-width: 24px; /* Controls horizontal spacing */
   transform: translateY(6px);
@@ -72,7 +60,7 @@ defineProps({
 
 .dots-row.center {
   justify-content: center;
-  margin-top: -2px; /* Move up slightly for triangle effect */
+  margin-top: -3px; /* Move up slightly for triangle effect */
 }
 
 .dot {
@@ -82,5 +70,4 @@ defineProps({
   border-radius: 50%;
   display: block;
 }
-
 </style>

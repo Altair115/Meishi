@@ -182,6 +182,19 @@
     border-color: var(--nier-separator);
 }
 
+/* === Accent for the separator line === */
+.nier-accent-bar {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+    background: transparent;
+    z-index: 5;
+}
+
 /* Test area */
 .main-content {
     max-width: 1280px;
