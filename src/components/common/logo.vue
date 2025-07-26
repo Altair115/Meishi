@@ -4,10 +4,9 @@
 
 <template>
   <!-- Example with SVG logo -->
-  <svg class="logo-img" viewBox="0 0 32 32" width="32" height="32">
-    <!-- Your SVG paths here -->
-    <circle cx="16" cy="16" r="16" fill="#4fc08d"/>
-    <text x="16" y="21" font-size="12" fill="#fff" text-anchor="middle">App</text>
+  <svg class="logo-img" viewBox="0 0 50 50" width="50" height="50">
+    <rect width="50" height="50" fill="#535145"/>
+    <image href="@/assets/MythirialRetroSepia.svg"  height="45" width="45" x="2.5" y="2.5"/>
   </svg>
 </template>
 

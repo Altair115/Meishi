@@ -51,6 +51,7 @@
     margin-right: 2rem;
     transition: opacity .2s;
     text-decoration: none;
+    transform: translateY(5px);
 }
 
 .nier-navbar-links {
