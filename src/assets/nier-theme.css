@@ -26,7 +26,7 @@
     height: var(--nier-navbar-height);
     transition: background 0.3s, box-shadow 0.3s;
     box-shadow: none;
-    position: static;
+    position: relative;
     border-bottom: 3px solid var(--nier-separator);
     font-family: var(--nier-font-family);
     box-sizing: border-box;

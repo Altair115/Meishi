@@ -3,6 +3,7 @@ import { defineProps, nextTick } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import NavBarItem from "@/components/navigation/NavBarItem.vue";
 import Logo from "@/components/common/logo.vue";
+import NierAccentBar from "@/components/common/NierAccentBar.vue";
 
 const props = defineProps({ sticky: Boolean });
 const router = useRouter();
@@ -59,6 +60,7 @@ function handleLogoClick(event: MouseEvent) {
         <NavBarItem to="/blog" label="Blog" icon="rss_feed" />
       </li>
     </ul>
+    <NierAccentBar :count="24" />
   </nav>
 </template>
 
