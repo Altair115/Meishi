@@ -16,24 +16,26 @@ export function computeSegments(segments: SegmentInput[], slantPercent: number):
     const svgSegments: SvgSegment[] = []
 
     let x = 0
-    for (const segment of segments) {
+    const slant = slantPercent
+    let prevTopRight = 0
+
+    for (let i = 0; i < segments.length; i++) {
+        const segment = segments[i]
         const w = segment.width
         const nextX = x + w
 
-        const slant = slantPercent
-
-        const topLeft = x
+        const topLeft = i === 0 ? x : prevTopRight
         const topRight = nextX + slant
         const bottomRight = nextX
         const bottomLeft = x
 
-        // Ensures next segment starts where previous ended
         svgSegments.push({
             points: `${topLeft},0 ${topRight},0 ${bottomRight},100 ${bottomLeft},100`,
             fill: segment.transparent ? 'transparent' : convertToRgba(segment.color ?? '#000', segment.alpha ?? 1),
         })
 
         x = nextX
+        prevTopRight = topRight
     }
 
     return svgSegments
