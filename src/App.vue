@@ -30,7 +30,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <Banner @height="updateBannerHeight">
+  <Banner @height="updateBannerHeight" :image-url="'/my/background-image.jpg'">
     <h1>K.E. Celinski</h1>
     <p>Software engineer, Programmer, Game designer</p>
   </Banner>

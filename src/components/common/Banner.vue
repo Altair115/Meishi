@@ -16,7 +16,6 @@ const props = defineProps<{
   slantPercent?: number          // now percent of each segment’s width
   imageUrl: string
   imageRightOffset?: string      // e.g. '80%'
-  height: number                 // absolute px height
 }>()
 
 const defaultSegments: SegmentInput[] = [
@@ -36,7 +35,6 @@ const svgSegments = computed(() =>
       ref="bannerRef"
       class="banner-container"
       :style="{
-      height: `${height}px`,
       '--image-width': imageRightOffset
     }"
   >
@@ -102,6 +100,6 @@ const svgSegments = computed(() =>
   align-items: center;
   justify-content: center;
   height: 100%;
-  color: white;
+  color: var(--nier-sepia);
 }
 </style>
