@@ -66,19 +66,28 @@ const svgSegments = computed(() =>
 <style scoped>
 .banner-container {
   position: relative;
-  height: 600px;
   width: 100%;
+  aspect-ratio: 16 / 9;
+  height: clamp(300px, 40vw, 600px);
   overflow: hidden;
 }
 
 .banner-image {
   position: absolute;
   right: 0;
-  width: 80%;
+  width: var(--image-width, 80%);
   height: 100%;
   background-size: cover;
   background-position: center right;
   z-index: 0;
+}
+
+/* Responsive fallback for small screens */
+@media (max-width: 600px) {
+  .banner-image {
+    width: 100%;
+    background-position: center center;
+  }
 }
 
 .banner-svg {
