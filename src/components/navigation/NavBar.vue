@@ -5,7 +5,7 @@ import NavBarItem from "@/components/navigation/NavBarItem.vue";
 import Logo from "@/components/common/logo.vue";
 import NierAccentBar from "@/components/common/NierAccentBar.vue";
 
-const props = defineProps({ sticky: Boolean });
+const props = defineProps({ sticky: Boolean, activeSection: String });
 const router = useRouter();
 const route = useRoute();
 
@@ -48,16 +48,16 @@ function handleLogoClick(event: MouseEvent) {
     </a>
     <ul class="nier-navbar-links">
       <li>
-        <NavBarItem to="/about" label="About" icon="info" />
+        <NavBarItem to="/about" label="About" icon="info" :active="props.activeSection === 'about'"/>
       </li>
       <li>
-        <NavBarItem to="/projects" label="Projects" icon="code" />
+        <NavBarItem to="/projects" label="Projects" icon="code" :active="props.activeSection === 'projects'"/>
       </li>
       <li>
-        <NavBarItem to="/contact" label="Contact" icon="mail" />
+        <NavBarItem to="/contact" label="Contact" icon="mail" :active="props.activeSection === 'contact'"/>
       </li>
       <li>
-        <NavBarItem to="/blog" label="Blog" icon="rss_feed" />
+        <NavBarItem to="/blog" label="Blog" icon="rss_feed" :active="route.path === '/blog'"/>
       </li>
     </ul>
     <NierAccentBar/>

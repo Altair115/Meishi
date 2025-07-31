@@ -1,8 +1,24 @@
 ﻿<script setup lang="ts">
-import Banner from "@/components/common/Banner.vue";
+import {useActiveSection} from "@/composables/useActiveSection";
+import { watch } from "vue";
+
 import AboutView from "@/views/AboutView.vue";
 import ProjectsView from "@/views/ProjectsView.vue";
 import ContactView from "@/views/ContactView.vue";
+
+const props = defineProps<{
+  activeSection: string | null
+}>();
+
+const emit = defineEmits<{
+  (e: 'update:activeSection', value: string | null): void;
+}>();
+
+const { activeSection: observedSection } = useActiveSection(['home', 'about', 'projects', 'contact']);
+
+watch(observedSection, (newSection) => {
+  emit('update:activeSection', newSection);
+});
 </script>
 
 <template>

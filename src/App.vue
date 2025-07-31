@@ -1,13 +1,17 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import {ref, onMounted, onBeforeUnmount, watch} from 'vue';
 import NavBar from "@/components/navigation/NavBar.vue";
 import Banner from "@/components/common/Banner.vue";
 import Footer from "@/components/common/Footer.vue";
 import image from '@/assets/MythirialWallpaper.jpg'
+import {useRoute} from "vue-router";
+
+const route = useRoute();
 
 const isSticky = ref(false);
 const bannerHeight = ref(600);
 const navbarHeight = ref(95); // If needed for offset
+const activeSection = ref(null);
 
 function updateBannerHeight(height) {
   bannerHeight.value = height;
@@ -28,6 +32,10 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll);
 });
+
+watch(activeSection, (val) => {
+  console.log('👀 activeSection changed:', val);
+});
 </script>
 
 <template>
@@ -35,13 +43,13 @@ onBeforeUnmount(() => {
     <h1>K.E. Celinski</h1>
     <p>Software engineer, Programmer, Game designer</p>
   </Banner>
-  <NavBar :sticky="isSticky" @height="updateNavBarHeight" />
+  <NavBar :sticky="isSticky" :active-section="route.path === '/' ? activeSection : null" @height="updateNavBarHeight" />
 
   <!-- Spacer for sticky navbar -->
   <div v-if="isSticky" :style="{ height: navbarHeight + 'px' }"></div>
 
   <main class="main-content">
-    <router-view />
+    <router-view v-model:activeSection="activeSection" />
     <Footer />
   </main>
 </template>

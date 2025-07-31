@@ -6,6 +6,7 @@ const props = defineProps<{
   to: string;
   label: string;
   icon?: string; // Material icon name or symbol
+  active?: boolean;
 }>();
 
 const router = useRouter();
@@ -37,6 +38,7 @@ function scrollToSection(id: string) {
   <router-link
       :to="isAnchor ? '/' : to"
       class="nier-navbar-link"
+      :class="{active}"
       :title="label"
       @click="handleClick"
   >
