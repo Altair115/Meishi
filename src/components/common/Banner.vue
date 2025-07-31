@@ -13,7 +13,7 @@ onMounted(() => {
 
 const props = defineProps<{
   segments?: SegmentInput[]
-  slantPercent?: number          // now percent of each segment’s width
+  slantPercent?: number          // percentage of each segment’s width
   imageUrl: string
   imageRightOffset?: string      // e.g. '80%'
 }>()
@@ -101,6 +101,7 @@ const svgSegments = computed(() =>
 }
 
 .banner-content {
+  font-size: clamp(1.5rem, 4vw, 3rem);
   position: relative;
   z-index: 2;
   /* center content, or whatever you need… */
@@ -108,7 +109,11 @@ const svgSegments = computed(() =>
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1.5rem;
   height: 100%;
   color: var(--nier-sepia);
+}
+.banner-content :is(h1, p) {
+  margin: 0;
 }
 </style>

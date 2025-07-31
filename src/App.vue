@@ -3,6 +3,7 @@ import { ref, onMounted, onBeforeUnmount } from 'vue';
 import NavBar from "@/components/navigation/NavBar.vue";
 import Banner from "@/components/common/Banner.vue";
 import Footer from "@/components/common/Footer.vue";
+import image from '@/assets/MythirialWallpaper.jpg'
 
 const isSticky = ref(false);
 const bannerHeight = ref(600);
@@ -30,7 +31,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <Banner @height="updateBannerHeight" :image-url="'/my/background-image.jpg'">
+  <Banner @height="updateBannerHeight" :image-url="image">
     <h1>K.E. Celinski</h1>
     <p>Software engineer, Programmer, Game designer</p>
   </Banner>
