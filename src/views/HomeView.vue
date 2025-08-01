@@ -14,7 +14,7 @@ const emit = defineEmits<{
   (e: 'update:activeSection', value: string | null): void;
 }>();
 
-const { activeSection: observedSection } = useActiveSection(['home', 'about', 'projects', 'contact']);
+const { activeSection: observedSection } = useActiveSection(['about', 'projects', 'contact']);
 
 watch(observedSection, (newSection) => {
   emit('update:activeSection', newSection);

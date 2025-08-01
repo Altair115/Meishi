@@ -7,6 +7,7 @@ import image from '@/assets/MythirialWallpaper.jpg'
 import {useRoute} from "vue-router";
 
 const route = useRoute();
+const isHome = route.path === '/'; // or use a more robust check if needed
 
 const isSticky = ref(false);
 const bannerHeight = ref(600);
@@ -49,7 +50,7 @@ watch(activeSection, (val) => {
   <div v-if="isSticky" :style="{ height: navbarHeight + 'px' }"></div>
 
   <main class="main-content">
-    <router-view v-model:activeSection="activeSection" />
+    <router-view v-if="isHome" v-model:activeSection="activeSection" />
     <Footer />
   </main>
 </template>
