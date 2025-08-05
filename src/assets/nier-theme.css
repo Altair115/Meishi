@@ -226,7 +226,7 @@
     border: 1px solid #bdbdaf;
     font-family: var(--nier-font-family);
     color: var(--nier-dark-sepia);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
 }
 
 /* Header bar  */
