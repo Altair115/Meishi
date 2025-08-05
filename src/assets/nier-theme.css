@@ -1,0 +1,267 @@
+﻿@import './base.css';
+
+:root {
+    --nier-light-sepia:      #D8D2BA;
+    --nier-sepia:            #CBC6B0;
+    --nier-dark-sepia:       #46433A;
+
+    --nier-navbar-bg:        #C6C1AB;  /* Main navbar sepia */
+    --nier-navitem-bg:       #9F9A87;  /* Nav item (darker sepia) */
+    --nier-navitem-text:     #46433A;  /* Default item text, very dark */
+    --nier-navitem-active-bg:#46433A;  /* Selected item, pale sepia */
+    --nier-navitem-active-text:#cfc9b1;/* Selected tab text, rich/dark */
+    --nier-separator:        #46433A;  /* Decorative lines or accents */
+    --nier-navbar-height:    95px;
+    --nier-font-family:      'M PLUS 1p','Noto Serif', serif;
+    --nier-icon-box-size:    35px;    /* Default icon box size */
+    --nier-icon-size:        30px;    /* Default icon size */
+    --nier-text-size:        1.6em;     /* Default nav item label size */
+}
+
+/* === NieR Navbar Theme === */
+.nier-navbar {
+    width: 100%;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    background: var(--nier-navbar-bg);
+    padding: 0 2rem;
+    height: var(--nier-navbar-height);
+    transition: background 0.3s, box-shadow 0.3s;
+    box-shadow: none;
+    position: relative;
+    border-bottom: 3px solid var(--nier-separator);
+    font-family: var(--nier-font-family);
+    box-sizing: border-box;
+}
+
+.nier-navbar-sticky {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: var(--nier-navbar-bg) !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+}
+
+.nier-navbar-logo {
+    display: flex;
+    align-items: center;
+    color: var(--nier-navitem-text);
+    margin-right: 2rem;
+    transition: opacity .2s;
+    text-decoration: none;
+    transform: translateY(5px);
+}
+
+.nier-navbar-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    transform: translateY(5px);
+    align-items: center; /* Everything perfectly centered */
+}
+
+/* === NavBarItem === */
+.nier-navbar-link {
+    position: relative; /* Needed for absolute positioning of lines */
+    overflow: visible;
+    display: flex;
+    width: 165px;
+    align-items: center;
+    background: var(--nier-navitem-bg);
+    color: var(--nier-navitem-text);
+    margin-right: 1.5rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition: background .2s, color .2s, box-shadow .2s;
+    border-radius: 0;
+    padding: .5em;
+    font-family: var(--nier-font-family);
+    font-size: 1.18em;
+    box-shadow: none;       /* Default: no underline */
+}
+
+/* Use pseudo-elements for the top and bottom lines */
+.nier-navbar-link::before,
+.nier-navbar-link::after {
+    content: "";
+    position: absolute;
+    left: 0%;   /* Prevent full-width lines, adjust as needed */
+    right: 0%;
+    height: 3px;
+    background: var(--nier-separator);
+    opacity: 0;
+    transition: opacity 0.2s, background 0.2s;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.nier-navbar-link::before {
+    top: -6px; /* Offset 2px from the top */
+}
+.nier-navbar-link::after {
+    bottom: -6px; /* Offset 2px from the bottom */
+}
+
+/* Show lines on hover/focus ONLY if not active */
+.nier-navbar-link:not(.active):hover::before,
+.nier-navbar-link:not(.active):hover::after,
+.nier-navbar-link:not(.active):focus::before,
+.nier-navbar-link:not(.active):focus::after {
+    opacity: 1;
+}
+
+/* Prevent lines on active state */
+.nier-navbar-link.active::before,
+.nier-navbar-link.active::after,
+.nier-navbar-link.router-link-exact-active::before,
+.nier-navbar-link.router-link-exact-active::after {
+    opacity: 0 !important;
+}
+
+.nier-navbar-link:hover,
+.nier-navbar-link:focus,
+.nier-navbar-link.router-link-exact-active,
+.nier-navbar-link.active {
+    background: var(--nier-navitem-active-bg);
+    color: var(--nier-navitem-active-text);
+}
+
+.nier-navbar-link.router-link-exact-active,
+.nier-navbar-link.active {
+    box-shadow: 0 16px 0 0 var(--nier-separator);
+}
+
+.nier-navbar-link:hover .icon,
+.nier-navbar-link:focus .icon,
+.nier-navbar-link.router-link-exact-active .icon,
+.nier-navbar-link.active .icon {
+    color: var(--nier-navitem-active-bg);
+}
+
+.nier-navbar-link:hover .icon-box,
+.nier-navbar-link:focus .icon-box,
+.nier-navbar-link.router-link-exact-active .icon-box,
+.nier-navbar-link.active .icon-box {
+    background: var(--nier-navitem-active-text);
+    border-color: var(--nier-navitem-active-text);
+}
+
+.nier-navbar-link:hover .nav-label,
+.nier-navbar-link:focus .nav-label,
+.nier-navbar-link.router-link-exact-active .nav-label,
+.nier-navbar-link.active .nav-label {
+    color: var(--nier-navitem-active-text);
+}
+
+.nier-navbar-link .material-icons {
+    vertical-align: middle;
+}
+
+/* === NavBarItem Icon === */
+.icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--nier-icon-box-size);
+    height: var(--nier-icon-box-size);
+    margin-right: 0.75em;
+    background: #535145;
+}
+
+.icon {
+    font-size: var(--nier-icon-size);
+    color: var(--nier-navitem-active-text);
+}
+
+.nav-label {
+    font-size: var(--nier-text-size);
+}
+
+/* For future separator lines or accents */
+.nier-separator {
+    border-color: var(--nier-separator);
+}
+
+/* === Accent for the separator line === */
+.nier-accent-bar {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+    background: transparent;
+    z-index: 5;
+}
+
+/* === Footer === */
+.nier-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: var(--nier-navbar-bg);
+    color: var(--nier-navitem-text);
+    border-top: 3px solid var(--nier-separator);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    overflow: visible;
+    z-index: 100;
+}
+
+/* === NieR Panel Theme === */
+.nier-panel {
+    width: 100%;
+    background-color: var(--nier-light-sepia);
+    border: 1px solid #bdbdaf;
+    font-family: var(--nier-font-family);
+    color: var(--nier-dark-sepia);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Header bar  */
+.nier-panel_header {
+    background-color: var(--nier-dark-sepia);
+    color: var(--nier-light-sepia);
+    padding: 8px 12px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.nier-panel_body {
+    padding: 16px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* === NieR Scrollbar Theme === */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--nier-sepia);
+    border-left: 3px solid var(--nier-dark-sepia);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--nier-dark-sepia);
+    box-shadow: inset 0 0 2px #00000050;
+}
+
+/* Test area */
+#app {
+    background: var(--nier-sepia);
+}
+

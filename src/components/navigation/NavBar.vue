@@ -3,8 +3,9 @@ import { defineProps, nextTick } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import NavBarItem from "@/components/navigation/NavBarItem.vue";
 import Logo from "@/components/common/logo.vue";
+import NierAccentBar from "@/components/common/NierAccentBar.vue";
 
-const props = defineProps({ sticky: Boolean });
+const props = defineProps({ sticky: Boolean, activeSection: String });
 const router = useRouter();
 const route = useRoute();
 
@@ -41,61 +42,28 @@ function handleLogoClick(event: MouseEvent) {
 </script>
 
 <template>
-  <nav :class="['navbar', { 'navbar-sticky': props.sticky }]">
-    <a href="/home" class="navbar-logo" title="Home" @click="handleLogoClick">
+  <nav :class="['nier-navbar', { 'nier-navbar-sticky': props.sticky }]">
+    <a href="/home" class="nier-navbar-logo" title="Home" @click="handleLogoClick">
       <Logo />
     </a>
-    <ul class="navbar-links">
+    <ul class="nier-navbar-links">
       <li>
-        <NavBarItem to="#about" label="About" icon="info" />
+        <NavBarItem to="/about" label="About" icon="info" :active="props.activeSection === 'about'"/>
       </li>
       <li>
-        <NavBarItem to="#projects" label="Projects" icon="code" />
+        <NavBarItem to="/projects" label="Projects" icon="code" :active="props.activeSection === 'projects'"/>
       </li>
       <li>
-        <NavBarItem to="#contact" label="Contact" icon="mail" />
+        <NavBarItem to="/contact" label="Contact" icon="mail" :active="props.activeSection === 'contact'"/>
       </li>
       <li>
-        <NavBarItem to="/blog" label="Blog" icon="rss_feed" />
+        <NavBarItem to="/blog" label="Blog" icon="rss_feed" :active="route.path === '/blog'"/>
       </li>
     </ul>
+    <NierAccentBar/>
   </nav>
 </template>
 
 <style scoped>
-.navbar {
-  width: 100vw;
-  left: 0;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  background: transparent;
-  padding: 0 2rem;
-  height: 56px;
-  transition: background 0.3s, box-shadow 0.3s;
-  box-shadow: none;
-  /* Only sticky will be fixed! */
-  position: static;
-  top: auto;
-}
-.navbar-sticky {
-  position: fixed;
-  top: 0;
-  background: #222 !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.09);
-}
-.navbar-logo {
-  display: flex;
-  align-items: center;
-  color: #fff;
-  margin-right: 2rem;
-  transition: opacity .2s;
-  text-decoration: none;
-}
-.navbar-links {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+
 </style>
