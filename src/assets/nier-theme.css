@@ -1,15 +1,16 @@
 ﻿@import './base.css';
 
 :root {
-    --nier-sepia:            #cfc9b1;
-    --nier-dark-sepia:       #535145;
+    --nier-light-sepia:      #D8D2BA;
+    --nier-sepia:            #CBC6B0;
+    --nier-dark-sepia:       #46433A;
 
-    --nier-navbar-bg:        #cfc9b1;  /* Main navbar sepia */
-    --nier-navitem-bg:       #a39e8a;  /* Nav item (darker sepia) */
-    --nier-navitem-text:     #535145;  /* Default item text, very dark */
-    --nier-navitem-active-bg:#535145;  /* Selected item, pale sepia */
+    --nier-navbar-bg:        #C6C1AB;  /* Main navbar sepia */
+    --nier-navitem-bg:       #9F9A87;  /* Nav item (darker sepia) */
+    --nier-navitem-text:     #46433A;  /* Default item text, very dark */
+    --nier-navitem-active-bg:#46433A;  /* Selected item, pale sepia */
     --nier-navitem-active-text:#cfc9b1;/* Selected tab text, rich/dark */
-    --nier-separator:        #535145;  /* Decorative lines or accents */
+    --nier-separator:        #46433A;  /* Decorative lines or accents */
     --nier-navbar-height:    95px;
     --nier-font-family:      'M PLUS 1p','Noto Serif', serif;
     --nier-icon-box-size:    35px;    /* Default icon box size */
@@ -218,6 +219,32 @@
     z-index: 100;
 }
 
+/* === NieR Panel Theme === */
+.nier-panel {
+    width: 100%;
+    background-color: var(--nier-light-sepia);
+    border: 1px solid #bdbdaf;
+    font-family: var(--nier-font-family);
+    color: var(--nier-dark-sepia);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Header bar  */
+.nier-panel_header {
+    background-color: var(--nier-dark-sepia);
+    color: var(--nier-light-sepia);
+    padding: 8px 12px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.nier-panel_body {
+    padding: 16px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
 /* === NieR Scrollbar Theme === */
 ::-webkit-scrollbar {
     width: 15px;
@@ -234,6 +261,7 @@
 }
 
 /* Test area */
-
-
+#app {
+    background: var(--nier-sepia);
+}
 
