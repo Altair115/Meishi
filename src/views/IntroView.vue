@@ -1,6 +1,7 @@
 ﻿<script setup lang="ts">
 
 import NierPanel from "@/components/common/NierPanel.vue";
+import NierAccentedHeading from "@/components/common/NierAccentedHeading.vue";
 </script>
 
 <template>
@@ -8,7 +9,7 @@ import NierPanel from "@/components/common/NierPanel.vue";
     <section class="twoColumn-left">
       <h1 class="nier-title">Home</h1>
 
-      <h1>Why Meishi?</h1>
+      <NierAccentedHeading>Why Meishi?</NierAccentedHeading>
       <p class="intro">
         In Japan, the exchange of a meishi, or business card, isn't just practical. It's more like a quiet handshake.
         It marks the beginning of a connection and distills someone's identity into something small and intentional.
