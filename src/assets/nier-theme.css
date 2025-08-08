@@ -16,6 +16,8 @@
     --nier-icon-box-size:    35px;    /* Default icon box size */
     --nier-icon-size:        30px;    /* Default icon size */
     --nier-text-size:        1.6em;     /* Default nav item label size */
+
+    --accent-heading-width: 300px;
 }
 
 /* === NieR Navbar Theme === */
@@ -276,6 +278,10 @@
     font-family: var(--nier-font-family);
     margin-bottom: 2rem;
     color: var(--nier-dark-sepia);
+}
+
+.twoColumn-right{
+    margin-top: 5rem;
 }
 
 .nier-title {

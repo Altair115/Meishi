@@ -1,5 +1,6 @@
 ﻿<script setup lang="ts">
 import NierPanel from "@/components/common/NierPanel.vue";
+import NierAccentedHeading from "@/components/common/NierAccentedHeading.vue";
 
 const statusItems = [
   { label: 'Name', value: 'Kevin / Hikoboshi / Altair' },
@@ -15,12 +16,12 @@ const statusItems = [
     <section class="twoColumn-left">
       <h1 class="nier-title">ABOUT</h1>
 
-      <h1>Bio</h1>
+      <NierAccentedHeading>Bio</NierAccentedHeading>
       <p class="intro">
         I'm a frontend developer passionate about gamedev UI, stylized interfaces, and breathing life into menus. I love experimenting with CSS and drawing from games like NieR.
       </p>
 
-      <h1>Interest</h1>
+      <NierAccentedHeading>Interest</NierAccentedHeading>
       <p class="intro">my interest and hobbiess</p>
     </section>
 
