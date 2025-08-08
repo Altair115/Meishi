@@ -260,6 +260,52 @@
     box-shadow: inset 0 0 2px #00000050;
 }
 
+/* === Nier Title Theme & 2 Column Layout == */
+.twoColumn-layout {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-width: 1280px;
+}
+
+.twoColumn-left .nier-title {
+    font-size: 2.5rem;
+    letter-spacing: 0.2rem;
+    font-family: var(--nier-font-family);
+    margin-bottom: 2rem;
+    color: var(--nier-dark-sepia);
+}
+
+.nier-title {
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.4);
+    margin-top: 0;
+}
+
+.intro {
+    max-width: 80%;
+    line-height: 1.6;
+    font-size: 1.2rem;
+    color: var(--nier-dark-sepia);
+}
+
+.status-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.status-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--nier-font-family);
+    color: var(--nier-dark-sepia);
+    font-size: 0.95rem;
+}
+
 /* Test area */
 #app {
     background: var(--nier-sepia);
