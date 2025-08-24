@@ -10,7 +10,7 @@ const route = useRoute();
 const isHome = route.path === '/'; // or use a more robust check if needed
 
 const isSticky = ref(false);
-const bannerHeight = ref(600);
+const bannerHeight = ref(540);
 const navbarHeight = ref(95); // If needed for offset
 const activeSection = ref(null);
 

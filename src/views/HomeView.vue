@@ -5,7 +5,6 @@ import { watch } from "vue";
 import AboutView from "@/views/AboutView.vue";
 import ProjectsView from "@/views/ProjectsView.vue";
 import ContactView from "@/views/ContactView.vue";
-import NierPanel from "@/components/common/NierPanel.vue";
 import IntroView from "@/views/IntroView.vue";
 
 const props = defineProps<{

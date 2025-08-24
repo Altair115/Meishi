@@ -43,11 +43,17 @@ const languages = [
 
       <NierAccentedHeading>Bio</NierAccentedHeading>
       <p class="intro">
-        I'm a frontend developer passionate about gamedev UI, stylized interfaces, and breathing life into menus. I love experimenting with CSS and drawing from games like NieR.
+        I’m a software engineer who turns fuzzy requirements into clean, testable systems.
+        I build maintainable Vue/TypeScript interfaces and .NET/C# services with DI, pragmatic patterns, and event-driven messaging, behind clear OpenAPI contracts.
+        I’m not games-first overall, but in my spare time I prototype Unity systems like: RTS tech trees, social-stealth mechanics, and UI recreations, because I like UX that disappears behind good architecture.
+        I care about crisp boundaries, readable code, and leaving codebases easier to change than I found them.
+        Away from the editor I’m studying Japanese, reading anime/manga, spinning vinyl on an LP setup, and sketching ideas in Clip Studio.
       </p>
 
-      <NierAccentedHeading>Interest</NierAccentedHeading>
-      <p class="intro">my interest and hobbies</p>
+      <NierAccentedHeading>Interests</NierAccentedHeading>
+      <p class="intro">
+        Games · UI/UX · Drawing · Cooking · Japanese · Anime/Manga · Vinyl · PC builds
+      </p>
     </section>
 
     <section class="twoColumn-right">
