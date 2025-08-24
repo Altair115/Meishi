@@ -1,13 +1,23 @@
 ﻿<script setup lang="ts">
 import NierPanel from "@/components/common/NierPanel.vue";
 import NierAccentedHeading from "@/components/common/NierAccentedHeading.vue";
+import NierInfoBlock from "@/components/PanelBlocks/NierInfoBlock.vue";
+import NierSkillsBlock from "@/components/PanelBlocks/NierSkillsBlock.vue";
+import NierLanguagesBlock from "@/components/PanelBlocks/NierLanguagesBlock.vue";
 
-const statusItems = [
-  { label: 'Name', value: 'Kevin / Hikoboshi / Altair' },
-  { label: 'Based in', value: 'Europe' },
-  { label: 'Role', value: 'Software Engineer / Programmer' },
-  { label: 'Skills', value: 'Vue, Unity, TypeScript, C#' },
-  { label: 'Languages', value: 'Dutch, English, Polish, German, Japanese' },
+const info = [
+  { label: "Name:", value: "Kevin / Hikoboshi / Altair" },
+  { label: "Location:", value: "Europe" },
+  { label: "Role:", value: "Software Engineer / Programmer" },
+]
+
+const skills = ["Vue", "Unity", "TypeScript", "C#", ".Net"]
+
+const languages = [
+  { language: "Dutch",   level: "Native" },
+  { language: "English", level: "Fluent" },
+  { language: "Polish",  level: "Conversational" },
+  { language: "German",  level: "Basic" },
 ]
 </script>
 
@@ -22,17 +32,18 @@ const statusItems = [
       </p>
 
       <NierAccentedHeading>Interest</NierAccentedHeading>
-      <p class="intro">my interest and hobbiess</p>
+      <p class="intro">my interest and hobbies</p>
     </section>
 
     <section class="twoColumn-right">
       <NierPanel title="Status" bottomLabel="NO ERROR">
-        <ul class="status-list">
-          <li v-for="(item, index) in statusItems" :key="index" class="status-row">
-            <span class="label">{{ item.label }}</span>
-            <span class="value">{{ item.value }}</span>
-          </li>
-        </ul>
+        <NierInfoBlock :info="info" />
+        <hr class="nier-light-separator" />
+
+        <NierSkillsBlock :skills="skills" />
+        <hr class="nier-light-separator" />
+
+        <NierLanguagesBlock :languages="languages" />
       </NierPanel>
     </section>
   </div>

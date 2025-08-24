@@ -1,23 +1,24 @@
 ﻿@import './base.css';
 
 :root {
-    --nier-light-sepia:      #D8D2BA;
-    --nier-sepia:            #CBC6B0;
-    --nier-dark-sepia:       #46433A;
+    --nier-light-sepia:         #D8D2BA;
+    --nier-sepia:               #CBC6B0;
+    --nier-dark-sepia:          #46433A;
 
-    --nier-navbar-bg:        #C6C1AB;  /* Main navbar sepia */
-    --nier-navitem-bg:       #9F9A87;  /* Nav item (darker sepia) */
-    --nier-navitem-text:     #46433A;  /* Default item text, very dark */
-    --nier-navitem-active-bg:#46433A;  /* Selected item, pale sepia */
-    --nier-navitem-active-text:#cfc9b1;/* Selected tab text, rich/dark */
-    --nier-separator:        #46433A;  /* Decorative lines or accents */
-    --nier-navbar-height:    95px;
-    --nier-font-family:      'M PLUS 1p','Noto Serif', serif;
-    --nier-icon-box-size:    35px;    /* Default icon box size */
-    --nier-icon-size:        30px;    /* Default icon size */
-    --nier-text-size:        1.6em;     /* Default nav item label size */
+    --nier-navbar-bg:           #C6C1AB;  /* Main navbar sepia */
+    --nier-navitem-bg:          #9F9A87;  /* Nav item (darker sepia) */
+    --nier-navitem-text:        #46433A;  /* Default item text, very dark */
+    --nier-navitem-active-bg:   #46433A;  /* Selected item, pale sepia */
+    --nier-navitem-active-text: #cfc9b1;/* Selected tab text, rich/dark */
+    --nier-separator:           #46433A;  /* Decorative lines or accents */
+    --nier-light-separator:     #beb8a2;  /* Decorative lines or accents */
+    --nier-navbar-height:       95px;
+    --nier-font-family:         'M PLUS 1p','Noto Serif', serif;
+    --nier-icon-box-size:       35px;    /* Default icon box size */
+    --nier-icon-size:           30px;    /* Default icon size */
+    --nier-text-size:           1.6em;     /* Default nav item label size */
 
-    --accent-heading-width: 300px;
+    --accent-heading-width:     300px;
 }
 
 /* === NieR Navbar Theme === */
@@ -187,6 +188,10 @@
 /* For future separator lines or accents */
 .nier-separator {
     border-color: var(--nier-separator);
+}
+
+.nier-light-separator {
+    border-color: var(--nier-light-separator);
 }
 
 /* === Accent for the separator line === */
