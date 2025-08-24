@@ -2,6 +2,7 @@
 
 import NierPanel from "@/components/common/NierPanel.vue";
 import NierAccentedHeading from "@/components/common/NierAccentedHeading.vue";
+import NierStatusMessage from "@/components/PanelBlocks/NierStatusMessage.vue";
 </script>
 
 <template>
@@ -22,9 +23,11 @@ import NierAccentedHeading from "@/components/common/NierAccentedHeading.vue";
     </section>
 
     <section class="twoColumn-right">
-      <NierPanel title="Definition of Meishi" bottomLabel="NO ERROR">
+      <NierPanel title="Definition of Meishi">
         Meishi (名刺) is the Japanese word for a business card, a concise but powerful tool used to represent one’s professional identity.
         Traditionally exchanged during introductions, a meishi conveys much more than contact information—it embodies respect, hierarchy, and formality in Japanese culture.
+        <hr class="nier-light-separator" />
+        <NierStatusMessage text="DEFINITION READY" />
       </NierPanel>
     </section>
   </div>

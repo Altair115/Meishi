@@ -4,6 +4,7 @@ import NierAccentedHeading from "@/components/common/NierAccentedHeading.vue";
 import NierInfoBlock from "@/components/PanelBlocks/NierInfoBlock.vue";
 import NierSkillsBlock from "@/components/PanelBlocks/NierSkillsBlock.vue";
 import NierLanguagesBlock from "@/components/PanelBlocks/NierLanguagesBlock.vue";
+import NierStatusMessage from "@/components/PanelBlocks/NierStatusMessage.vue";
 
 const info = [
   { label: "Name:", value: "Kevin / Altair" },
@@ -58,6 +59,10 @@ const languages = [
         <hr class="nier-light-separator" />
 
         <NierLanguagesBlock :languages="languages" />
+        <hr class="nier-light-separator" />
+
+        <NierStatusMessage text="PROFILE SYNC READY" />
+
       </NierPanel>
     </section>
   </div>
