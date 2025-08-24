@@ -11,7 +11,20 @@ const info = [
   { label: "Role:", value: "Software Engineer / Programmer" },
 ]
 
-const skills = ["Vue", "Unity", "TypeScript", "C#", ".Net"]
+const skills = [{ name: "C#", level: "Advanced" },
+  { name: ".NET", level: "Advanced" },
+  { name: "Vue", level: "Advanced" },
+  { name: "TypeScript", level: "Advanced" },
+  { name: "Unity", level: "Advanced" },
+  { name: "Angular", level: "Intermediate" },
+  { name: "RabbitMQ", level: "Intermediate" },
+  { name: "Swagger / OpenAPI", level: "Intermediate" },
+  { name: "Dependency Injection", level: "Advanced" },
+  { name: "Design Patterns", level: "Advanced" },
+  { name: "Event-Driven Architecture", level: "Intermediate" },
+  { name: "Mirror (Networking)", level: "Intermediate" },
+  { name: "Addressables", level: "Intermediate" }
+]
 
 const languages = [
   { language: "Dutch",    level: "Native" },
