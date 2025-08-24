@@ -1,21 +1,24 @@
 ﻿@import './base.css';
 
 :root {
-    --nier-light-sepia:      #D8D2BA;
-    --nier-sepia:            #CBC6B0;
-    --nier-dark-sepia:       #46433A;
+    --nier-light-sepia:         #D8D2BA;
+    --nier-sepia:               #CBC6B0;
+    --nier-dark-sepia:          #46433A;
 
-    --nier-navbar-bg:        #C6C1AB;  /* Main navbar sepia */
-    --nier-navitem-bg:       #9F9A87;  /* Nav item (darker sepia) */
-    --nier-navitem-text:     #46433A;  /* Default item text, very dark */
-    --nier-navitem-active-bg:#46433A;  /* Selected item, pale sepia */
-    --nier-navitem-active-text:#cfc9b1;/* Selected tab text, rich/dark */
-    --nier-separator:        #46433A;  /* Decorative lines or accents */
-    --nier-navbar-height:    95px;
-    --nier-font-family:      'M PLUS 1p','Noto Serif', serif;
-    --nier-icon-box-size:    35px;    /* Default icon box size */
-    --nier-icon-size:        30px;    /* Default icon size */
-    --nier-text-size:        1.6em;     /* Default nav item label size */
+    --nier-navbar-bg:           #C6C1AB;  /* Main navbar sepia */
+    --nier-navitem-bg:          #9F9A87;  /* Nav item (darker sepia) */
+    --nier-navitem-text:        #46433A;  /* Default item text, very dark */
+    --nier-navitem-active-bg:   #46433A;  /* Selected item, pale sepia */
+    --nier-navitem-active-text: #cfc9b1;/* Selected tab text, rich/dark */
+    --nier-separator:           #46433A;  /* Decorative lines or accents */
+    --nier-light-separator:     #beb8a2;  /* Decorative lines or accents */
+    --nier-navbar-height:       95px;
+    --nier-font-family:         'M PLUS 1p','Noto Serif', serif;
+    --nier-icon-box-size:       35px;    /* Default icon box size */
+    --nier-icon-size:           30px;    /* Default icon size */
+    --nier-text-size:           1.6em;     /* Default nav item label size */
+
+    --accent-heading-width:     300px;
 }
 
 /* === NieR Navbar Theme === */
@@ -187,6 +190,12 @@
     border-color: var(--nier-separator);
 }
 
+.nier-light-separator {
+    border: none;
+    border-top: 2px solid var(--nier-light-separator);
+    margin: 8px 0;
+}
+
 /* === Accent for the separator line === */
 .nier-accent-bar {
     width: 100%;
@@ -226,7 +235,7 @@
     border: 1px solid #bdbdaf;
     font-family: var(--nier-font-family);
     color: var(--nier-dark-sepia);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
 }
 
 /* Header bar  */
@@ -258,6 +267,56 @@
 ::-webkit-scrollbar-thumb {
     background-color: var(--nier-dark-sepia);
     box-shadow: inset 0 0 2px #00000050;
+}
+
+/* === Nier Title Theme & 2 Column Layout == */
+.twoColumn-layout {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-width: 1280px;
+}
+
+.twoColumn-left .nier-title {
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+    font-family: var(--nier-font-family);
+    margin-bottom: 2rem;
+    color: var(--nier-dark-sepia);
+}
+
+.twoColumn-right{
+    margin-top: 5rem;
+}
+
+.nier-title {
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.4);
+    margin-top: 0;
+}
+
+.intro {
+    max-width: 90%;
+    line-height: 1.6;
+    font-size: 1.2rem;
+    color: var(--nier-dark-sepia);
+}
+
+.status-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.status-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--nier-font-family);
+    color: var(--nier-dark-sepia);
+    font-size: 0.95rem;
 }
 
 /* Test area */

@@ -5,7 +5,7 @@ import { watch } from "vue";
 import AboutView from "@/views/AboutView.vue";
 import ProjectsView from "@/views/ProjectsView.vue";
 import ContactView from "@/views/ContactView.vue";
-import NierPanel from "@/components/common/NierPanel.vue";
+import IntroView from "@/views/IntroView.vue";
 
 const props = defineProps<{
   activeSection: string | null
@@ -24,10 +24,7 @@ watch(observedSection, (newSection) => {
 
 <template>
   <section id="home">
-    <nier-panel title="Home">
-      <h1>Welcome to Meishi!</h1>
-      <p>This is your homepage. Edit it as you like!</p>
-    </nier-panel>
+    <IntroView/>
   </section>
   <section id="about">
     <AboutView />
