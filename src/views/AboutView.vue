@@ -6,7 +6,7 @@ import NierSkillsBlock from "@/components/PanelBlocks/NierSkillsBlock.vue";
 import NierLanguagesBlock from "@/components/PanelBlocks/NierLanguagesBlock.vue";
 
 const info = [
-  { label: "Name:", value: "Kevin / Hikoboshi / Altair" },
+  { label: "Name:", value: "Kevin / Altair" },
   { label: "Location:", value: "Europe" },
   { label: "Role:", value: "Software Engineer / Programmer" },
 ]
@@ -14,10 +14,11 @@ const info = [
 const skills = ["Vue", "Unity", "TypeScript", "C#", ".Net"]
 
 const languages = [
-  { language: "Dutch",   level: "Native" },
-  { language: "English", level: "Fluent" },
-  { language: "Polish",  level: "Conversational" },
-  { language: "German",  level: "Basic" },
+  { language: "Dutch",    level: "Native" },
+  { language: "English",  level: "Fluent" },
+  { language: "Polish",   level: "Conversational" },
+  { language: "German",   level: "Basic" },
+  { language: "Japanese", level: "learning"}
 ]
 </script>
 

@@ -7,14 +7,32 @@ defineProps<{ info: InfoItem[] }>()
 </script>
 
 <template>
-  <div class="space-y-1">
-    <div v-for="item in info" :key="item.label" class="flex justify-between">
-      <span>{{ item.label }}</span>
-      <span>{{ item.value }}</span>
+  <div class="nier-block">
+    <div v-for="item in info" :key="item.label" class="nier-row">
+      <span class="nier-label">{{ item.label }}</span>
+      <span class="nier-value">{{ item.value }}</span>
     </div>
   </div>
 </template>
 
 <style scoped>
+.nier-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+}
 
+.nier-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nier-label {
+  font-weight: bold;
+}
+
+.nier-value {
+  text-align: right;
+}
 </style>

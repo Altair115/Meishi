@@ -191,7 +191,9 @@
 }
 
 .nier-light-separator {
-    border-color: var(--nier-light-separator);
+    border: none;
+    border-top: 2px solid var(--nier-light-separator);
+    margin: 8px 0;
 }
 
 /* === Accent for the separator line === */
